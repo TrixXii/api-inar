@@ -2,7 +2,7 @@
 
 @section('content')
 <div id="pelise">
-<h1>Search Movies</h1>
+<h1>Search Series</h1>
 
     <form id="search-form" action="" method="GET" name="pelis">
         <div class="form-group">
@@ -26,7 +26,7 @@
     searchForm.addEventListener('submit', async (event) => {
         event.preventDefault();
         const query = searchForm.elements.query.value;
-        fetch(`/api/omdb/bySearchMovies?query=${query}`, {
+        fetch(`/api/omdb/bySearchSeries?query=${query}`, {
             headers: {
                 "Content-Type": "application/x-www-form-urlencoded",
             }

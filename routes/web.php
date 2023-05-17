@@ -19,11 +19,11 @@ use Laravel\Socialite\Facades\Socialite;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->middleware('auth');
 
 Route::get('/login-google', function () {
     return Socialite::driver('google')->redirect();
-});
+})->name('login');
  
 Route::get('/google-callback', function () {
     $user = Socialite::driver('google')->user();
@@ -54,4 +54,7 @@ Route::get('/logout' ,function (){
 });
 Route::get('/bySearchMovies', function () {
     return view('index');
+});
+Route::get('/bySearchSeries', function () {
+    return view('busSerie');
 });
